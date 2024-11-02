@@ -1,0 +1,15 @@
+services:
+  web_api:
+    # image: vehicle-api
+    build: .
+    container_name: vehicle_demo_api
+    ports:
+      - 5001:8080
+  sql:
+    image: 'mcr.microsoft.com/mssql/server:2022-latest'
+    container_name: sql_demo
+    ports:
+      - '1433:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Michael123!
